@@ -14,6 +14,7 @@
 @property (nonatomic, strong) CBCentralManager *centralManager;
 
 @property (nonatomic, strong) NSMutableArray<CBPeripheral *> *peripherals;
+@property (nonatomic, weak) CBPeripheral *connectingPeripheral;
 
 @property (nonatomic, strong) NSMutableSet *observers;
 
@@ -45,23 +46,30 @@
 }
 
 - (void)scanPeripherals {
-    if (self.centralManager.state == CBManagerStatePoweredOn) {
-        [self resetManager]; // 这句不知道要不要加上
+    if (self.centralManager.state == CBManagerStatePoweredOn && !self.centralManager.isScanning) {
         [self.centralManager scanForPeripheralsWithServices:nil options:nil];
     }
 }
 
 - (void)resetManager {
+    if (self.connectingPeripheral) {
+        [self cancelPeripheralConnection:self.connectingPeripheral];
+    }
     [self.centralManager stopScan];
     [self.peripherals removeAllObjects];
 }
 
 - (void)connectPeripheral:(CBPeripheral *)peripheral {
-    [self.centralManager connectPeripheral:peripheral options:nil];
+    [self connectPeripheral:peripheral options:nil];
+}
+
+- (void)connectPeripheral:(CBPeripheral *)peripheral options:(NSDictionary<NSString *,id> *)options {
+    [self.centralManager connectPeripheral:peripheral options:options];
 }
 
 - (void)cancelPeripheralConnection:(CBPeripheral *)peripheral {
     [self.centralManager cancelPeripheralConnection:peripheral];
+    self.connectingPeripheral = nil;
 }
 
 #pragma mark - 观察者，蹦床模式
@@ -136,7 +144,7 @@
 
 // app状态的保存或者恢复，这是第一个被调用的方法.当APP进入后台去完成一些蓝牙有关的工作设置，使用这个方法通过蓝牙系统同步app状态
 - (void)centralManager:(CBCentralManager *)central willRestoreState:(NSDictionary<NSString *,id> *)dict {
-    NSLog(@"central manager will restore state: %@", dict);
+    [(id)self centralManagerWillRestoreState:dict];
 }
 
 // 扫描到外设时的回调
@@ -149,16 +157,20 @@
     NSLog(@"新设备  %@", peripheral.name);
     
     [self.peripherals addObject:peripheral];
-    [(id)self centralManagerDidDiscoverPeripheral:peripheral];
+    [(id)self centralManagerDidDiscoverPeripheral:peripheral advertisementData:advertisementData RSSI:RSSI];
 }
 
 // 当connectPeripheral:options:连接成功时，会调用该方法，在该方法中设置该外设代理，发现外设的服务
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral {
+    self.connectingPeripheral = peripheral;
     [(id)self centralManagerDidConnectPeripheral:peripheral];
 }
 
 // 当connectPeripheral:options:方法连接外设失败时会调用该方法
 - (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(nullable NSError *)error {
+    if (peripheral == self.connectingPeripheral) {
+        self.connectingPeripheral = nil;
+    }
     [(id)self centralManagerDidFailToConnectPeripheral:peripheral error:error];
 }
 

@@ -22,6 +22,9 @@
                            commandProvider:(nonnull id<WZBPPeripheralCommandDataSource>)commandProvider;
 
 @property (nonatomic, readonly, nonnull) CBPeripheral *peripheral;
+@property (nonatomic, readonly, nonnull) id<WZBPPeripheralInfoDataSource> periphralInfoProvider;
+@property (nonatomic, readonly, nonnull) id<WZBPPeripheralDataParseDelegate> dataParser;
+@property (nonatomic, readonly, nonnull) id<WZBPPeripheralCommandDataSource> commandProvider;
 
 - (void)setPeripheral:(nonnull CBPeripheral *)peripheral
 peripheralInfoProvider:(nonnull id<WZBPPeripheralInfoDataSource>)peripheralInfoProvider

@@ -14,12 +14,14 @@
 		5D2055BC1E6FF57D00F7FC39 /* WZBPPeripheralMediatorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2055BB1E6FF57D00F7FC39 /* WZBPPeripheralMediatorFactory.m */; };
 		5D2055BF1E7004EA00F7FC39 /* YYYPeripheralInfoProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2055BE1E7004EA00F7FC39 /* YYYPeripheralInfoProvider.m */; };
 		5D2055C51E70051300F7FC39 /* YYYBPCommandProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2055C41E70051300F7FC39 /* YYYBPCommandProvider.m */; };
+		5D2055C81E700D1D00F7FC39 /* AppDelegate+BLEConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2055C71E700D1D00F7FC39 /* AppDelegate+BLEConfig.m */; };
+		5D2055D81E70131C00F7FC39 /* ChooseBrandVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2055D71E70131C00F7FC39 /* ChooseBrandVC.m */; };
+		5D2055DB1E7013A700F7FC39 /* ChoosePeripheralVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2055DA1E7013A700F7FC39 /* ChoosePeripheralVC.m */; };
+		5D2055DE1E7013C800F7FC39 /* MeasureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2055DD1E7013C800F7FC39 /* MeasureVC.m */; };
 		5D3480DC1E6E96F100A548AD /* WZBLECentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3480DB1E6E96F100A548AD /* WZBLECentralManager.m */; };
 		5D3480DF1E6E972700A548AD /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3480DE1E6E972700A548AD /* CoreBluetooth.framework */; };
 		5D4E177A1E39D4F6002F87E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E17791E39D4F6002F87E4 /* main.m */; };
 		5D4E177D1E39D4F6002F87E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E177C1E39D4F6002F87E4 /* AppDelegate.m */; };
-		5D4E17801E39D4F6002F87E4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E177F1E39D4F6002F87E4 /* ViewController.m */; };
-		5D4E17831E39D4F6002F87E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D4E17811E39D4F6002F87E4 /* Main.storyboard */; };
 		5D4E17851E39D4F6002F87E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D4E17841E39D4F6002F87E4 /* Assets.xcassets */; };
 		5D4E17881E39D4F6002F87E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D4E17861E39D4F6002F87E4 /* LaunchScreen.storyboard */; };
 		5DD3357A1E6EFD4500674938 /* WZBPPeripheralMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD335791E6EFD4500674938 /* WZBPPeripheralMediator.m */; };
@@ -41,6 +43,14 @@
 		5D2055BE1E7004EA00F7FC39 /* YYYPeripheralInfoProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYYPeripheralInfoProvider.m; sourceTree = "<group>"; };
 		5D2055C31E70051300F7FC39 /* YYYBPCommandProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYYBPCommandProvider.h; sourceTree = "<group>"; };
 		5D2055C41E70051300F7FC39 /* YYYBPCommandProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYYBPCommandProvider.m; sourceTree = "<group>"; };
+		5D2055C61E700D1D00F7FC39 /* AppDelegate+BLEConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+BLEConfig.h"; sourceTree = "<group>"; };
+		5D2055C71E700D1D00F7FC39 /* AppDelegate+BLEConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+BLEConfig.m"; sourceTree = "<group>"; };
+		5D2055D61E70131C00F7FC39 /* ChooseBrandVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseBrandVC.h; sourceTree = "<group>"; };
+		5D2055D71E70131C00F7FC39 /* ChooseBrandVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseBrandVC.m; sourceTree = "<group>"; };
+		5D2055D91E7013A700F7FC39 /* ChoosePeripheralVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoosePeripheralVC.h; sourceTree = "<group>"; };
+		5D2055DA1E7013A700F7FC39 /* ChoosePeripheralVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoosePeripheralVC.m; sourceTree = "<group>"; };
+		5D2055DC1E7013C800F7FC39 /* MeasureVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeasureVC.h; sourceTree = "<group>"; };
+		5D2055DD1E7013C800F7FC39 /* MeasureVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeasureVC.m; sourceTree = "<group>"; };
 		5D3480DA1E6E96F100A548AD /* WZBLECentralManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZBLECentralManager.h; sourceTree = "<group>"; };
 		5D3480DB1E6E96F100A548AD /* WZBLECentralManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZBLECentralManager.m; sourceTree = "<group>"; };
 		5D3480DE1E6E972700A548AD /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
@@ -49,9 +59,6 @@
 		5D4E17791E39D4F6002F87E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5D4E177B1E39D4F6002F87E4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5D4E177C1E39D4F6002F87E4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5D4E177E1E39D4F6002F87E4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5D4E177F1E39D4F6002F87E4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		5D4E17821E39D4F6002F87E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5D4E17841E39D4F6002F87E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D4E17871E39D4F6002F87E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D4E17891E39D4F6002F87E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -121,9 +128,14 @@
 				5D3480D91E6E96BD00A548AD /* Core */,
 				5D4E177B1E39D4F6002F87E4 /* AppDelegate.h */,
 				5D4E177C1E39D4F6002F87E4 /* AppDelegate.m */,
-				5D4E177E1E39D4F6002F87E4 /* ViewController.h */,
-				5D4E177F1E39D4F6002F87E4 /* ViewController.m */,
-				5D4E17811E39D4F6002F87E4 /* Main.storyboard */,
+				5D2055C61E700D1D00F7FC39 /* AppDelegate+BLEConfig.h */,
+				5D2055C71E700D1D00F7FC39 /* AppDelegate+BLEConfig.m */,
+				5D2055D61E70131C00F7FC39 /* ChooseBrandVC.h */,
+				5D2055D71E70131C00F7FC39 /* ChooseBrandVC.m */,
+				5D2055D91E7013A700F7FC39 /* ChoosePeripheralVC.h */,
+				5D2055DA1E7013A700F7FC39 /* ChoosePeripheralVC.m */,
+				5D2055DC1E7013C800F7FC39 /* MeasureVC.h */,
+				5D2055DD1E7013C800F7FC39 /* MeasureVC.m */,
 				5D4E17841E39D4F6002F87E4 /* Assets.xcassets */,
 				5D4E17861E39D4F6002F87E4 /* LaunchScreen.storyboard */,
 				5D4E17891E39D4F6002F87E4 /* Info.plist */,
@@ -215,7 +227,6 @@
 			files = (
 				5D4E17881E39D4F6002F87E4 /* LaunchScreen.storyboard in Resources */,
 				5D4E17851E39D4F6002F87E4 /* Assets.xcassets in Resources */,
-				5D4E17831E39D4F6002F87E4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,12 +237,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D2055C81E700D1D00F7FC39 /* AppDelegate+BLEConfig.m in Sources */,
 				5D3480DC1E6E96F100A548AD /* WZBLECentralManager.m in Sources */,
 				5D2055C51E70051300F7FC39 /* YYYBPCommandProvider.m in Sources */,
+				5D2055DB1E7013A700F7FC39 /* ChoosePeripheralVC.m in Sources */,
 				5D2055B91E6FF04100F7FC39 /* BluetoothSIGBPData.m in Sources */,
-				5D4E17801E39D4F6002F87E4 /* ViewController.m in Sources */,
+				5D2055D81E70131C00F7FC39 /* ChooseBrandVC.m in Sources */,
 				5DD3357A1E6EFD4500674938 /* WZBPPeripheralMediator.m in Sources */,
 				5D2055BC1E6FF57D00F7FC39 /* WZBPPeripheralMediatorFactory.m in Sources */,
+				5D2055DE1E7013C800F7FC39 /* MeasureVC.m in Sources */,
 				5D2055B01E6FEF0E00F7FC39 /* XXXPeripheralInfoProvider.m in Sources */,
 				5D2055B31E6FEF4100F7FC39 /* BluetoothSIGBPDataParser.m in Sources */,
 				5D2055B61E6FEF7900F7FC39 /* XXXBPCommandProvider.m in Sources */,
@@ -244,14 +258,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5D4E17811E39D4F6002F87E4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5D4E17821E39D4F6002F87E4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5D4E17861E39D4F6002F87E4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

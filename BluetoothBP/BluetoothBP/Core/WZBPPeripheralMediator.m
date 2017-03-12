@@ -12,11 +12,11 @@
 
 @property (nonatomic, strong, readwrite) CBPeripheral *peripheral;
 
-@property (nonatomic, strong) id<WZBPPeripheralInfoDataSource> periphralInfoProvider;
+@property (nonatomic, strong, readwrite) id<WZBPPeripheralInfoDataSource> periphralInfoProvider;
 
-@property (nonatomic, strong) id<WZBPPeripheralDataParseDelegate> dataParser;
+@property (nonatomic, strong, readwrite) id<WZBPPeripheralDataParseDelegate> dataParser;
 
-@property (nonatomic, strong) id<WZBPPeripheralCommandDataSource> commandProvider;
+@property (nonatomic, strong, readwrite) id<WZBPPeripheralCommandDataSource> commandProvider;
 
 @end
 
