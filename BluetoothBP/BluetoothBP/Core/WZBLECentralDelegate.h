@@ -24,4 +24,7 @@
 
 - (void)centralManagerDidDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error;
 
+- (void)willResetCentralManager;
+- (void)didResetCentralManager;
+
 @end

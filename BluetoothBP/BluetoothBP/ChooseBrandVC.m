@@ -17,6 +17,10 @@
 
 @implementation ChooseBrandVC
 
+- (void)dealloc {
+    NSLog(@"%@ dealloc", self.class);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"选择血压计品牌";

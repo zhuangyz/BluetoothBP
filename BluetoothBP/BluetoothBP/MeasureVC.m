@@ -8,6 +8,7 @@
 
 #import "MeasureVC.h"
 #import "WZBPPeripheralMediatorFactory.h"
+#import "WZBLECentralManager.h"
 
 @interface MeasureVC ()
 
@@ -28,13 +29,19 @@
 
 @implementation MeasureVC
 
+- (void)dealloc {
+    NSLog(@"%@ dealloc", self.class);
+    [[WZBLECentralManager shareManager] cancelPeripheralConnection:self.BPMediator.peripheral];
+}
+
 - (instancetype)initWithPeripheral:(CBPeripheral *)peripheral brand:(WZBPBrand)brand {
     if (self = [super init]) {
         self.BPMediator = [WZBPPeripheralMediatorFactory peripheralMediatorWithPeripheral:peripheral peripheralBrand:brand];
+        __weak typeof(self) weakSelf = self;
         [self.BPMediator setDidNotFoundMeasureServiceBlock:^{
             NSLog(@"该设备不是血压计");
+            [weakSelf.navigationController popViewControllerAnimated:YES];
         }];
-        __weak typeof(self) weakSelf = self;
         [self.BPMediator setDidParseBPDataBlock:^(NSArray<id<WZBPDataParsedDataSource>> * _Nonnull measuredValues) {
             if (weakSelf) {
                 if (measuredValues.count > 0) {
@@ -82,7 +89,7 @@
 
 - (UILabel *)systolicTitleLabel {
     if (!_systolicTitleLabel) {
-        _systolicTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 64 + 10, 50, 40)];
+        _systolicTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 64 + 10, 70, 40)];
         _systolicTitleLabel.text = @"舒张压: ";
         _systolicTitleLabel.font = [UIFont systemFontOfSize:16];
     }
@@ -96,7 +103,7 @@
                                                                         self.view.frame.size.width - CGRectGetMaxX(self.systolicTitleLabel.frame) - 10,
                                                                         self.systolicTitleLabel.frame.size.height)];
         _systolicValueLabel.font = self.systolicTitleLabel.font;
-        _systolicValueLabel.textColor = [UIColor greenColor];
+        _systolicValueLabel.textColor = [UIColor orangeColor];
         _systolicValueLabel.text = @"0";
     }
     return _systolicValueLabel;
@@ -155,6 +162,8 @@
         _measureBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _measureBtn.frame = CGRectMake(10, CGRectGetMaxY(self.pulseRateTitleLabel.frame) + 20, self.view.frame.size.width - (2 * 10), 44);
         [_measureBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        _measureBtn.clipsToBounds = YES;
+        _measureBtn.layer.cornerRadius = 4;
         [self setMeasureBtnEnable:![self.BPMediator.periphralInfoProvider autoMeasure]];
         [_measureBtn addTarget:self action:@selector(measureAction) forControlEvents:UIControlEventTouchUpInside];
     }

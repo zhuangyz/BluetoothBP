@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D03235C1E87A3B3001D4AF3 /* BLS_V10r00.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5D03235B1E87A3B3001D4AF3 /* BLS_V10r00.pdf */; };
 		5D2055B01E6FEF0E00F7FC39 /* XXXPeripheralInfoProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2055AF1E6FEF0E00F7FC39 /* XXXPeripheralInfoProvider.m */; };
 		5D2055B31E6FEF4100F7FC39 /* BluetoothSIGBPDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2055B21E6FEF4100F7FC39 /* BluetoothSIGBPDataParser.m */; };
 		5D2055B61E6FEF7900F7FC39 /* XXXBPCommandProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2055B51E6FEF7900F7FC39 /* XXXBPCommandProvider.m */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D03235B1E87A3B3001D4AF3 /* BLS_V10r00.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = BLS_V10r00.pdf; sourceTree = "<group>"; };
 		5D2055AD1E6FCC0400F7FC39 /* WZBPDataParsedDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZBPDataParsedDataSource.h; sourceTree = "<group>"; };
 		5D2055AE1E6FEF0E00F7FC39 /* XXXPeripheralInfoProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXXPeripheralInfoProvider.h; sourceTree = "<group>"; };
 		5D2055AF1E6FEF0E00F7FC39 /* XXXPeripheralInfoProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXXPeripheralInfoProvider.m; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				5D2055C41E70051300F7FC39 /* YYYBPCommandProvider.m */,
 				5D2055BA1E6FF57D00F7FC39 /* WZBPPeripheralMediatorFactory.h */,
 				5D2055BB1E6FF57D00F7FC39 /* WZBPPeripheralMediatorFactory.m */,
+				5D03235B1E87A3B3001D4AF3 /* BLS_V10r00.pdf */,
 			);
 			path = BluetoothBP;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D4E17881E39D4F6002F87E4 /* LaunchScreen.storyboard in Resources */,
+				5D03235C1E87A3B3001D4AF3 /* BLS_V10r00.pdf in Resources */,
 				5D4E17851E39D4F6002F87E4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

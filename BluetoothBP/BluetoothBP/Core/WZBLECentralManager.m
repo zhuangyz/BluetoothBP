@@ -16,7 +16,7 @@
 @property (nonatomic, strong) NSMutableArray<CBPeripheral *> *peripherals;
 @property (nonatomic, weak) CBPeripheral *connectingPeripheral;
 
-@property (nonatomic, strong) NSMutableSet *observers;
+@property (nonatomic, strong) NSHashTable *observers;
 
 @end
 
@@ -27,7 +27,7 @@
     if (self) {
         self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil options:@{CBCentralManagerOptionShowPowerAlertKey:@(NO)}];
         self.peripherals = [NSMutableArray array];
-        self.observers = [NSMutableSet set];
+        self.observers = [NSHashTable weakObjectsHashTable];
     }
     return self;
 }
@@ -52,11 +52,15 @@
 }
 
 - (void)resetManager {
+    [(id)self willResetCentralManager];
+    
     if (self.connectingPeripheral) {
         [self cancelPeripheralConnection:self.connectingPeripheral];
     }
     [self.centralManager stopScan];
     [self.peripherals removeAllObjects];
+    
+    [(id)self didResetCentralManager];
 }
 
 - (void)connectPeripheral:(CBPeripheral *)peripheral {
@@ -75,10 +79,12 @@
 #pragma mark - 观察者，蹦床模式
 - (void)addObserver:(id<WZBLECentralDelegate>)observer {
     NSAssert([observer conformsToProtocol:@protocol(WZBLECentralDelegate)], @"%@ must conform to WZBLECentralDelegate", observer.class);
+    if (!observer) return;
     [self.observers addObject:observer];
 }
 
 - (void)removeObserver:(id<WZBLECentralDelegate>)observer {
+    if (!observer) return;
     [self.observers removeObject:observer];
 }
 
@@ -154,7 +160,7 @@
             return;
         }
     }
-    NSLog(@"新设备  %@", peripheral.name);
+    NSLog(@"新设备：%@  连接状态：%ld", peripheral.name, peripheral.state);
     
     [self.peripherals addObject:peripheral];
     [(id)self centralManagerDidDiscoverPeripheral:peripheral advertisementData:advertisementData RSSI:RSSI];
@@ -180,10 +186,6 @@
 }
 
 @end
-
-
-
-
 
 
 

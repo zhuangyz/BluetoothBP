@@ -21,6 +21,7 @@
 @implementation ChoosePeripheralVC
 
 - (void)dealloc {
+    NSLog(@"%@ dealloc", self.class);
     [[WZBLECentralManager shareManager] removeObserver:self];
 }
 
@@ -62,6 +63,11 @@
 - (void)centralManagerDidFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error {
     [self.tableView reloadData];
     NSLog(@"连接失败 %@", error.localizedDescription);
+}
+
+- (void)didResetCentralManager {
+    [self.peripherals removeAllObjects];
+    [self.tableView reloadData];
 }
 
 #pragma mark - UITableViewDataSource and UITableViewDelegate
